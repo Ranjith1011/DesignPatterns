@@ -1,0 +1,19 @@
+Idea: Given an object of some class, create a copy of it
+why:
+1. Given an object of some class, create a copy of it
+
+Implementation:
+1. Approach is to have copy constructor
+2. But with copy constructor, we have a problem of child classes.
+Eg: Student <- IntelligentStudent
+Student stCopy = new Student(intelligentStudent) // Problem, so have to know prior what type of student it is
+3. Ideal solution is to outsource copy work to object itself instead of client doing it.
+Eg: Student stCopy = intelligentStudent.copy()
+
+Hence have a copy method in object(general one is clone())
+
+4. Maintain a registry of all prototypes and using any single prototype to copy and create new object out of it
+
+
+
+
