@@ -1,0 +1,3 @@
+Idea: Move the factory methods to different interface(call it factory interface)
+why:
+1. SPR violation

@@ -1,0 +1,5 @@
+Idea: Have a factory method
+why:
+1. OCP violation
+
+Example is available in abstract factory package
