@@ -1,0 +1,34 @@
+Idea: Allows you to create only one object for a class.
+why:
+1. May it is a class having shared resource behind the scenes
+2. Creation of an object is expensive
+Implementation:
+1. Make it's constructor private
+2. Have a public static method which creates an instance of the class only if instance is not existing else return already existing one
+3. Above method can be prone to multi thread issue while object creation for the first time
+4. So singleton in concurrent environment follow eager loading / eager execution approach
+5 eager loading / eager execution - create the instance before hand instead creating it in the method, method is only responsible for returning existing one
+6. Using step-5 application start time increases though
+7. Other way is create getInstance method synchronised instead of created it via eager loading/execution
+8. But drawback with step-7 is it is slow as each thread has to execute it synchronously each time although it's need not be
+9. So use double check locking
+
+public static Instance getInstance(){
+    if(instance == null){
+        lock()
+        if(instance == null){
+                Instance = new Instance()
+        }
+        unlock()
+    }
+    return instance;
+}
+
+
+10. Fails handling serialization(Java specific) - implement using enums - adv topic - check it on your own
+
+Pros -
+1. Resource efficiency
+
+Cons -
+1. Difficult to test a class which is singleton
