@@ -1,0 +1,8 @@
+Idea: Have a separate builder class for building an object
+why:
+1. A class with lot of attributes
+2. Want to validate object before creating it
+3. If we have constructor with all attributes but there is a chance that client might not pass all attributes in the same manner constructor is expecting and is prone to errors
+4. With constructors, we might have to pass null values if those attributes need not to be initialized for that object or create constructor with different combinations of attributes
+
+
